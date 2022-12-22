@@ -1,8 +1,9 @@
 from django.urls import path
 
-from .views import Tasks
+from .views import Tasks, SingleTask
 
 urlpatterns = [
-    path('tasks/', Tasks.as_view(), name='tasks'),
+    path('', Tasks.as_view(), name='tasks'),
+    path('single/<int:pk>/', SingleTask.as_view(), name='single_tasks'),
 
 ]

@@ -10,4 +10,9 @@ class TasksCreateSerializer(serializers.ModelSerializer):
 class TasksGetSerializer(serializers.ModelSerializer):
     class Meta:
         model = Task
-        fields = ['title', 'date_time', 'done', 'owner']
+        fields = ['title', 'date_time', 'done']
+
+class SingleTaskSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Task
+        fields = ['title', 'discription', 'date_time', 'done']
