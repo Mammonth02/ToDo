@@ -9,3 +9,4 @@ class Task(models.Model):
         date_time = models.DateField(verbose_name='Дата задачи')
         done = models.BooleanField(default=False, verbose_name='Сделано')
         owner = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Создатель')
+        image = models.ImageField(upload_to='tasks_images/', null=True, blank=True, verbose_name='Фото')

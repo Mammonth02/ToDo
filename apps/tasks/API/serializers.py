@@ -5,7 +5,7 @@ from ..models import Task
 class TasksCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Task
-        fields = ['title', 'discription', 'date_time']
+        fields = ['title', 'discription', 'date_time', 'image']
 
 class TasksGetSerializer(serializers.ModelSerializer):
     class Meta:
@@ -15,4 +15,4 @@ class TasksGetSerializer(serializers.ModelSerializer):
 class SingleTaskSerializer(serializers.ModelSerializer):
     class Meta:
         model = Task
-        fields = ['title', 'discription', 'date_time', 'done']
+        fields = ['title', 'discription', 'date_time', 'done', 'image']
