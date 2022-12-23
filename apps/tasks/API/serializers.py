@@ -16,3 +16,8 @@ class SingleTaskSerializer(serializers.ModelSerializer):
     class Meta:
         model = Task
         fields = ['title', 'discription', 'date_time', 'done', 'image']
+
+class DeleteAllTasksSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Task
+        fields = []

@@ -6,7 +6,7 @@ from rest_framework.filters import SearchFilter, OrderingFilter
 
 
 from ..models import Task
-from .serializers import TasksCreateSerializer, TasksGetSerializer, SingleTaskSerializer
+from .serializers import TasksCreateSerializer, TasksGetSerializer, SingleTaskSerializer, DeleteAllTasksSerializer
 from .permissions import IsOwner
 from .service import TaskFilter
 
@@ -50,3 +50,12 @@ class SingleTask(generics.RetrieveUpdateDestroyAPIView):
     queryset = Task.objects.all()
     serializer_class = SingleTaskSerializer
     permission_classes = (IsOwner, )
+
+class DeleteAllTasks(generics.CreateAPIView):
+    queryset = Task.objects.all()
+    serializer_class = DeleteAllTasksSerializer
+    permission_classes = (IsOwner, )
+
+    def post(self, request, *args, **kwargs):
+        Task.objects.filter(owner = self.request.user).delete()
+        return redirect('tasks')

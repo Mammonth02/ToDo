@@ -16,7 +16,7 @@ urlpatterns = [
 ]
 
 api_urls = [
-    path('api/users/', include('apps.users.API.urls')),
+    path('api/user/', include('apps.users.API.urls')),
     path('api/tasks/', include('apps.tasks.API.urls')),
 ]
 
