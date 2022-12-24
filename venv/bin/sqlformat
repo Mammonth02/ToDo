@@ -1,5 +1,5 @@
 #!/bin/sh
-'''exec' "/home/timur/Рабочий стол/django/to do/venv/bin/python" "$0" "$@"
+'''exec' "/home/timur/Рабочий стол/django/to do/venv/bin/python3" "$0" "$@"
 ' '''
 # -*- coding: utf-8 -*-
 import re
